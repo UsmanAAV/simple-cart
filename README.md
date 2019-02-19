@@ -2,4 +2,4 @@
 
 simple application with cart functional
 
-[DEMO](http://gitname.github.io/react-gh-pages)
+[DEMO](http://usmanaav.github.io/simple-cart)
