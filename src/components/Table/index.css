@@ -1,0 +1,34 @@
+.table-wrapper {
+  background-color: #CBE8CA;
+  color: black;
+  margin: 10px auto;
+}
+
+.message {
+  font-style: italic;
+}
+
+.table {
+  margin: 5px auto;
+  border: 1px solid gray;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #A6D7E8;
+  font-weight: bold;
+}
+
+.oddrow {
+  background-color: #dedede;
+}
+
+.evenrow {
+  background-color: #efefef;
+}
+
+.table-cell {
+  border: 1px solid gray;
+  padding: 1px 10px;
+}
