@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { uniqueId } from 'lodash';
 
+import './index.css';
+import Input from '../Input';
+import Button from '../Button';
+import Card from '../Card';
+
 const ProductAdd = (props) => {
   const { addToCart } = props;
   const [nameInputValue, setNameInputValue] = useState('');
@@ -25,32 +30,32 @@ const ProductAdd = (props) => {
   };
 
   return (
-    <div>
-      <h1>Добавить продукт</h1>
+    <Card title='Добавить продукт'>
       <form className='product-add-form' onSubmit={handleSubmit}>
-        <div>
-          <p>Продукт</p>
-          <input
-            className='product-name-input'
-            name='product-name'
-            type='text'
-            value={nameInputValue}
-            onChange={e => setNameInputValue(e.target.value)}
-          />
-        </div>
-        <div>
-          <p>Цена</p>
-          <input
-            className='product-price-input'
-            name='product-price'
-            type='text'
-            value={priceInputValue}
-            onChange={handlePriceInput}
-          />
-        </div>
-        <button name='add-product' type='sumbit'>Добавить</button>
+        <Input
+          label='Продукт'
+          name='product-name'
+          type='text'
+          placeholder='Название продукта'
+          value={nameInputValue}
+          onChange={e => setNameInputValue(e.target.value)}
+          width='120px'
+        />
+        <Input
+          label='Цена'
+          name='product-price'
+          type='text'
+          value={priceInputValue}
+          onChange={handlePriceInput}
+          width='50px'
+        />
+        <Button
+          name='add-product'
+          type='submit'
+          text='Добавить'
+        />
       </form>
-    </div>
+    </Card>
   );
 };
 

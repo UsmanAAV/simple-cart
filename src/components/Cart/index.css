@@ -1,0 +1,6 @@
+.discount {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 5px;
+}

@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import './index.css';
+import Input from '../Input';
+import Button from '../Button';
+import Card from '../Card';
+import Table from '../Table';
 
 const Cart = (props) => {
   const { productsList, updateDiscount } = props;
@@ -21,49 +26,26 @@ const Cart = (props) => {
   };
 
   return (
-    <div className='cart'>
-      <h1>Корзина</h1>
-      {productsList.length
-        ? <table>
-            <thead>
-              <tr>
-                <th>Продукт</th>
-                <th>Цена</th>
-                <th>Цена со скидкой</th>
-              </tr>
-            </thead>
-            <tbody>
-              {productsList.map(product => (
-                <tr key={product.id}>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
-                  <td>{product.discountPrice}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        : <p>Ваша корзина пуста</p>
-      }
-      <div>
-        <span>Применить скидку</span>
-        <input
-          className='discount-input'
+    <Card title='Корзина'>
+      <Table items={productsList} cartEmptyMessage='Ваша корзина пуста' />
+      <div className='discount'>
+        <span>Скидка</span>
+        <Input
           name='discount'
           type='text'
           value={discountInputValue}
           onChange={handleDiscountInput}
+          width='30px'
         />
         <span>рублей</span>
-        <button
-          className='discount-set-button'
+        <Button
           name='update-discount'
           type='button'
+          text='Применить'
           onClick={handleDiscountUpdateButton}
-        >
-          Применить
-        </button>
+        />
       </div>
-    </div>
+    </Card>
   );
 };
 
