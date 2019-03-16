@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/UsmanAAV/simple-cart.svg?branch=master)](https://travis-ci.org/UsmanAAV/simple-cart) [![Maintainability](https://api.codeclimate.com/v1/badges/4cf8be0da2f88e495cb7/maintainability)](https://codeclimate.com/github/UsmanAAV/simple-cart/maintainability)
 
 # simple-cart
 
@@ -11,7 +12,7 @@ simple application with cart functional
 Это тестовое задание на позицию 'Frontend-разработчик' в какую-то компанию.
 
 
-## Условия
+## Требования
 
 ### Форма добавления товара
 В форме **'Добавить продукт'** можно добавить продукт (указав его цену) в корзину.
