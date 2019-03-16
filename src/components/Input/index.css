@@ -1,0 +1,15 @@
+.input-label {
+  display: block;
+  margin-left: 3px;
+}
+
+.input-field {
+  display: block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 22px;
+}
+
+.input-field:focus {
+  border: 1px solid black;
+}
