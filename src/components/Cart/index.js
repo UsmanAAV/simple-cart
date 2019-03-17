@@ -32,6 +32,7 @@ const Cart = (props) => {
         <span>Скидка</span>
         <Input
           name='discount'
+          inputClass='discount-input'
           type='text'
           value={discountInputValue}
           onChange={handleDiscountInput}
@@ -42,6 +43,7 @@ const Cart = (props) => {
           name='update-discount'
           type='button'
           text='Применить'
+          buttonClass='set-discount'
           onClick={handleDiscountUpdateButton}
         />
       </div>

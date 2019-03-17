@@ -1,15 +1,16 @@
 import React from 'react';
+import cn from 'classnames';
 import './index.css';
 
 const Button = (props) => {
-  const { name, type, text, onClick } = props;
+  const { name, type, text, buttonClass, onClick } = props;
   return (
     <div className='button-wrapper'>
       <button
         name={name}
         type={type}
         onClick={onClick}
-        className='button'
+        className={cn('button', buttonClass)}
       >
         {text}
       </button>

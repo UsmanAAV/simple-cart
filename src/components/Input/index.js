@@ -1,8 +1,9 @@
 import React from 'react';
+import cn from 'classnames';
 import './index.css';
 
 const Input = (props) => {
-  const { label, name, type, value, placeholder, onChange, width } = props;
+  const { label, name, inputClass, type, value, placeholder, onChange, width } = props;
   return (
     <div className='input-wrapper'>
       <label htmlFor='input' className='input-label'>
@@ -10,7 +11,7 @@ const Input = (props) => {
       </label>
       <input
         id='input'
-        className='input-field'
+        className={cn('input-field', inputClass)}
         type={type}
         style={{ width, height: '22px' }}
         name={name}

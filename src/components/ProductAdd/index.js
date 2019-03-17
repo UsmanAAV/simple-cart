@@ -35,6 +35,7 @@ const ProductAdd = (props) => {
         <Input
           label='Продукт'
           name='product-name'
+          inputClass='product-name-input'
           type='text'
           placeholder='Название продукта'
           value={nameInputValue}
@@ -44,6 +45,7 @@ const ProductAdd = (props) => {
         <Input
           label='Цена'
           name='product-price'
+          inputClass='product-price-input'
           type='text'
           value={priceInputValue}
           onChange={handlePriceInput}
@@ -53,6 +55,7 @@ const ProductAdd = (props) => {
           name='add-product'
           type='submit'
           text='Добавить'
+          buttonClass='add-product'
         />
       </form>
     </Card>
