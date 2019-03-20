@@ -24,9 +24,10 @@ const ProductAdd = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!priceInputValue) return;
     addToCart({ id: uniqueId(), name: nameInputValue, price: priceInputValue });
     setNameInputValue('');
-    setPriceInputValue('');
+    setPriceInputValue(0);
   };
 
   return (
