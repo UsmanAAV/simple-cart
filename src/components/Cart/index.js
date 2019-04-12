@@ -22,7 +22,7 @@ const Cart = (props) => {
 
   const handleDiscountUpdateButton = (e) => {
     e.preventDefault();
-    updateDiscount(discountInputValue);
+    updateDiscount(0);
   };
 
   return (
