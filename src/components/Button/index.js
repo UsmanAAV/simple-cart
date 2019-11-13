@@ -3,10 +3,11 @@ import cn from 'classnames';
 import './index.css';
 
 const Button = (props) => {
-  const { name, type, text, buttonClass, onClick } = props;
+  const { name, type, text, buttonClass, onClick, ...restProps } = props;
   return (
     <div className='button-wrapper'>
       <button
+        {...restProps}
         name={name}
         type={type}
         onClick={onClick}

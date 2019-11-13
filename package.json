@@ -5,7 +5,7 @@
   "homepage": "http://usmanaav.github.io/simple-cart",
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "^2.1.5"

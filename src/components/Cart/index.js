@@ -10,14 +10,8 @@ const Cart = (props) => {
   const [discountInputValue, setDiscountValue] = useState(0);
 
   const handleDiscountInput = (e) => {
-    const isNumber = value => {
-      const regex = new RegExp(/^-?\d*\.?\d*$/);
-      return regex.test(value);
-    };
     const { value } = e.target;
-    if (isNumber(value)) {
-      setDiscountValue(Number(value));
-    }
+    setDiscountValue(Number(value));
   };
 
   const handleDiscountUpdateButton = (e) => {
@@ -28,25 +22,27 @@ const Cart = (props) => {
   return (
     <Card title='Корзина'>
       <Table items={productsList} cartEmptyMessage='Ваша корзина пуста' />
-      <div className='discount'>
+      <form className='discount-form' onSubmit={handleDiscountUpdateButton}>
         <span>Скидка</span>
         <Input
           name='discount'
           inputClass='discount-input'
-          type='text'
+          type='number'
           value={discountInputValue}
           onChange={handleDiscountInput}
           width='30px'
+          max={99}
+          min={0}
         />
         <span>рублей</span>
         <Button
+          disabled={!productsList || productsList.length === 0}
           name='update-discount'
-          type='button'
+          type='submit'
           text='Применить'
           buttonClass='set-discount'
-          onClick={handleDiscountUpdateButton}
         />
-      </div>
+      </form>
     </Card>
   );
 };

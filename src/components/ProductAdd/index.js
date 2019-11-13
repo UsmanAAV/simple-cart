@@ -12,19 +12,15 @@ const ProductAdd = (props) => {
   const [priceInputValue, setPriceInputValue] = useState(0);
 
   const handlePriceInput = (e) => {
-    const isNumber = value => {
-      const regex = new RegExp(/^-?\d*\.?\d*$/);
-      return regex.test(value);
-    };
     const { value } = e.target;
-    if (isNumber(value)) {
-      setPriceInputValue(Number(value));
-    }
+    setPriceInputValue(Number(value));
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!priceInputValue) return;
+    if (!priceInputValue) {
+      return;
+    }
     addToCart({ id: uniqueId(), name: nameInputValue, price: priceInputValue });
     setNameInputValue('');
     setPriceInputValue(0);
@@ -42,15 +38,19 @@ const ProductAdd = (props) => {
           value={nameInputValue}
           onChange={e => setNameInputValue(e.target.value)}
           width='120px'
+          required
         />
         <Input
           label='Цена'
           name='product-price'
           inputClass='product-price-input'
-          type='text'
+          type='number'
           value={priceInputValue}
           onChange={handlePriceInput}
           width='50px'
+          max={1000000}
+          min={0}
+          required
         />
         <Button
           name='add-product'
